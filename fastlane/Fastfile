@@ -5,10 +5,10 @@ default_platform :ios
 platform :ios do
 
 
-	MASTER_PATH  = "https://github.com/CocoaPods/Specs.git"
+	#MASTER_PATH  = "https://github.com/CocoaPods/Specs.git"
 	PRIVATE_PATH = "https://github.com/reino-wang/Specs.git"
 
-	SOURCES = [MASTER_PATH, PRIVATE_PATH]
+	SOURCES = [PRIVATE_PATH]
 
 	desc 'publish lib'
 	lane :publish do |options|
