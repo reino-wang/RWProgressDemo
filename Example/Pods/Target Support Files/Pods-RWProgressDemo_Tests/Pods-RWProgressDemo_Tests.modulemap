@@ -1,0 +1,6 @@
+framework module Pods_RWProgressDemo_Tests {
+  umbrella header "Pods-RWProgressDemo_Tests-umbrella.h"
+
+  export *
+  module * { export * }
+}

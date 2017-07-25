@@ -1,0 +1,22 @@
+{
+  "name": "RWProgressDemo",
+  "version": "0.1.0",
+  "summary": "A short description of RWProgressDemo.",
+  "description": "TODO: Add long description of the pod here.",
+  "homepage": "https://github.com/reino-wang/RWProgressDemo",
+  "license": {
+    "type": "MIT",
+    "file": "LICENSE"
+  },
+  "authors": {
+    "reino-wang": "153672802@qq.com"
+  },
+  "source": {
+    "git": "https://github.com/reino-wang/RWProgressDemo.git",
+    "tag": "0.1.0"
+  },
+  "platforms": {
+    "ios": "8.0"
+  },
+  "source_files": "RWProgressDemo/Classes/**/*"
+}

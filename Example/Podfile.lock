@@ -1,0 +1,26 @@
+PODS:
+  - FBSnapshotTestCase (2.1.4):
+    - FBSnapshotTestCase/SwiftSupport (= 2.1.4)
+  - FBSnapshotTestCase/Core (2.1.4)
+  - FBSnapshotTestCase/SwiftSupport (2.1.4):
+    - FBSnapshotTestCase/Core
+  - Kiwi (2.4.0)
+  - RWProgressDemo (0.1.0)
+
+DEPENDENCIES:
+  - FBSnapshotTestCase
+  - Kiwi
+  - RWProgressDemo (from `../`)
+
+EXTERNAL SOURCES:
+  RWProgressDemo:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  FBSnapshotTestCase: '094f9f314decbabe373b87cc339bea235a63e07a'
+  Kiwi: f49c9d54b28917df5928fe44968a39ed198cb8a8
+  RWProgressDemo: 4e62edfaf4b24064bd45e170399574decb343c5d
+
+PODFILE CHECKSUM: 88d59cd29692dd014970f4c5408a53068f9e88a5
+
+COCOAPODS: 1.2.1

@@ -1,0 +1,6 @@
+framework module RWProgressDemo {
+  umbrella header "RWProgressDemo-umbrella.h"
+
+  export *
+  module * { export * }
+}

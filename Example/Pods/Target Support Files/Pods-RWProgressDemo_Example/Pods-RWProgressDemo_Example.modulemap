@@ -1,0 +1,6 @@
+framework module Pods_RWProgressDemo_Example {
+  umbrella header "Pods-RWProgressDemo_Example-umbrella.h"
+
+  export *
+  module * { export * }
+}
