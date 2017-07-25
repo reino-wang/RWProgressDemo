@@ -27,6 +27,11 @@ platform :ios do
 		)
 
 		pod_lib_lint(verbose: false, allow_warnings: true, use_bundle_exec: true, fail_fast: true)
+
+		add_git_tag(
+			tag: "#{target_version}"
+		)
+
 		git_add(path: ".")
 		git_commit(path: ".", message: "Bump version #{target_version}")
 		push_to_git_remote
