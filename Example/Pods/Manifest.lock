@@ -5,7 +5,7 @@ PODS:
   - FBSnapshotTestCase/SwiftSupport (2.1.4):
     - FBSnapshotTestCase/Core
   - Kiwi (2.4.0)
-  - RWProgressDemo (0.1.0)
+  - RWProgressDemo (0.1.1)
 
 DEPENDENCIES:
   - FBSnapshotTestCase
@@ -19,7 +19,7 @@ EXTERNAL SOURCES:
 SPEC CHECKSUMS:
   FBSnapshotTestCase: '094f9f314decbabe373b87cc339bea235a63e07a'
   Kiwi: f49c9d54b28917df5928fe44968a39ed198cb8a8
-  RWProgressDemo: 4e62edfaf4b24064bd45e170399574decb343c5d
+  RWProgressDemo: 11ac380acb0048c3ea5065d273fcda1cf5add0c3
 
 PODFILE CHECKSUM: 88d59cd29692dd014970f4c5408a53068f9e88a5
 

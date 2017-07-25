@@ -1,0 +1,34 @@
+fastlane_version "2.38.1"
+
+default_platform :ios
+
+platform :ios do
+
+	desc 'publish lib'
+	lane :publish do |options|
+		target_repo = options[:repo]
+		target_version = options[:version]
+		target_project = options[:project]
+		target_podspec = "#{target_project}.podspec"
+
+		git_pull
+		ensure_git_branch #确认分支是在master分支
+		version_bump_podspec(path: target_podspec, version_number: target_version) # 更新 podspec
+
+		cocoapods(
+			clean: true,
+			podfile: "./Example/Podfile"
+		)
+
+		pod_lib_lint(verbose: false, allow_warnings: true, use_bundle_exec: true, fail_fast: true)
+		git_add(path: ".")
+		git_commit(path: ".", message: "Bump version #{target_version}")
+		push_to_git_remote
+		pod_push(path: target_podspec, repo: "#{target_repo}", allow_warnings: true, sources: SOURCES) # 提交到repo
+
+		#cocoapods(
+		#	clean: true,
+		#	podfile: "./Example/Podfile"
+		#)
+	end
+end
