@@ -1,0 +1,12 @@
+use_frameworks!
+
+target 'RWProgressDemo_Example' do
+  pod 'RWProgressDemo', :path => '../'
+
+  target 'RWProgressDemo_Tests' do
+    inherit! :search_paths
+
+    pod 'Kiwi'
+  pod 'FBSnapshotTestCase'
+  end
+end
