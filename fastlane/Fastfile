@@ -26,11 +26,11 @@ platform :ios do
 			podfile: "./Example/Podfile"
 		)
 
-		pod_lib_lint(verbose: false, allow_warnings: true, sources: SOURCES, use_bundle_exec: true, fail_fast: true)
+		pod_lib_lint(verbose: false, allow_warnings: true, use_bundle_exec: true, fail_fast: true)
 		git_add(path: ".")
 		git_commit(path: ".", message: "Bump version #{target_version}")
 		push_to_git_remote
-		pod_push(path: target_podspec, repo: "#{target_repo}", allow_warnings: true, sources: SOURCES) # 提交到repo
+		pod_push(path: target_podspec, repo: "#{target_repo}", allow_warnings: true) # 提交到repo
 
 		cocoapods(
 			clean: true,
