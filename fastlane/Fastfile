@@ -1,45 +1,43 @@
+#import "/Users/wanglei/Desktop/fastlane/fastlane/Fastfile"
+
+actions_path '/Users/wanglei/Desktop/fastlane/fastlane/actions'
+
 fastlane_version "2.38.1"
 
 default_platform :ios
 
 platform :ios do
+	
+	desc 'pod repo update'
+	lane :pod_repo_update do |options|
+		target_repo = options[:repo]
+		rw_pod_repo_update(repo:target_repo);
+	end
 
 
-	#MASTER_PATH  = "https://github.com/CocoaPods/Specs.git"
-	#PRIVATE_PATH = "https://github.com/reino-wang/Specs.git"
-
-	#SOURCES = [PRIVATE_PATH]
-
-	desc 'publish lib'
-	lane :publish do |options|
+	desc 'pod push spec to repo'
+	lane :pod_push_spec do |options|
 		target_repo = options[:repo]
 		target_version = options[:version]
 		target_project = options[:project]
 		target_podspec = "#{target_project}.podspec"
 
 		git_pull
-		ensure_git_branch #确认分支是在master分支
-		version_bump_podspec(path: target_podspec, version_number: target_version) # 更新 podspec
+		#确认分支是在master分支
+		ensure_git_branch 
 
-		cocoapods(
-			clean: true,
-			podfile: "./Example/Podfile"
-		)
-
+		#更新podspec中的版本号
+		version_bump_podspec(path: target_podspec, version_number: target_version) 
 		pod_lib_lint(verbose: false, allow_warnings: true, use_bundle_exec: true, fail_fast: true)
-
-		add_git_tag(
-			tag: "#{target_version}"
-		)
-
+		add_git_tag(tag: "#{target_version}")
 		git_add(path: ".")
 		git_commit(path: ".", message: "Bump version #{target_version}")
 		push_to_git_remote
 		pod_push(path: target_podspec, repo: "#{target_repo}", allow_warnings: true) # 提交到repo
 
-		cocoapods(
-			clean: true,
-			podfile: "./Example/Podfile"
-		)
+
+		#更新对应的pod repo 
+		rw_pod_repo_update(repo:target_repo);
 	end
+
 end

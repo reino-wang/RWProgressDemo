@@ -30,11 +30,16 @@ xcode-select --install
 
 # Available Actions
 ## iOS
-### ios publish
+### ios pod_repo_update
 ```
-fastlane ios publish
+fastlane ios pod_repo_update
 ```
-publish lib
+pod repo update
+### ios pod_push_spec
+```
+fastlane ios pod_push_spec
+```
+pod push spec to repo
 
 ----
 
