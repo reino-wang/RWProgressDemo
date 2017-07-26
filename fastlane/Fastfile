@@ -25,7 +25,6 @@ platform :ios do
 		git_pull
 		#确认分支是在master分支
 		ensure_git_branch 
-
 		#更新podspec中的版本号
 		version_bump_podspec(path: target_podspec, version_number: target_version) 
 		pod_lib_lint(verbose: false, allow_warnings: true, use_bundle_exec: true, fail_fast: true)
@@ -33,11 +32,9 @@ platform :ios do
 		git_add(path: ".")
 		git_commit(path: ".", message: "Bump version #{target_version}")
 		push_to_git_remote
-		pod_push(path: target_podspec, repo: "#{target_repo}", allow_warnings: true) # 提交到repo
-
-
+		pod_push(path: target_podspec, repo: "#{target_repo}", allow_warnings: true)
 		#更新对应的pod repo 
-		rw_pod_repo_update(repo:target_repo);
+		pod_repo_update(repo:target_repo);
 	end
 
 end
